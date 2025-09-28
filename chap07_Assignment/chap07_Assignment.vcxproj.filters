@@ -15,49 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ch07_01.c">
+    <ClCompile Include="Assign01.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ch07_02.c">
+    <ClCompile Include="Assign02.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ch07_03.c">
+    <ClCompile Include="Assign09.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ch07_04.c">
+    <ClCompile Include="Assign10.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ch07_05.c">
+    <ClCompile Include="Assign11.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ch07_06.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ch07_07.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ch07_08.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ch07_09.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ch07_10.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ch07_11.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ch07_12.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ch07_13.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ch07_14.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ch07_15.c">
+    <ClCompile Include="Assign12.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
