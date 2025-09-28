@@ -17,8 +17,8 @@ int main()
 
 int exercise0704()
 {
-	int amount[5] = { 1, 1, 5 };
-	int price[5] = { 0 };
+	int amount[5] = { 1, 1, 5 };		// 1, 1, 5, 0, 0으로 초기화
+	int price[5] = { 0 };				// 배열 전체를 0으로 초기화
 	int i;
 
 	printf("amount = ");
