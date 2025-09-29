@@ -25,7 +25,7 @@ int main()
 int assign01()
 {
 	int arr[SIZE];
-	int* p = &arr;
+	int* p = arr;
 	filling_ES(p);
 	print_ES(p);
 

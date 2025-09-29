@@ -22,7 +22,7 @@ int main()
 int assign09()
 {
 	int arr[SIZE] = { 36000, 42000, 38000, 8000, 15000, 20000, 30000, 25000, 40000, 5000, 7000, 65000 };
-	int* p = &arr;
+	int* p = arr;
 	print_graph(p);
 	return 0;
 }
