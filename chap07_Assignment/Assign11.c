@@ -21,6 +21,6 @@ int main()
 
 int assign11()
 {
-
+	
 	return 0;
 }
