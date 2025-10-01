@@ -38,6 +38,10 @@ int assign11()
 	return 0;
 }
 
+// 기능명 : 넓이, 둘래 구하기
+// 입력 : 
+// 출력 :
+// 에러 :
 int get_rect_info(int* width, int* height,int AC[])
 {
 	AC[0] = (*width) * (*height);
