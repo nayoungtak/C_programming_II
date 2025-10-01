@@ -25,7 +25,19 @@ int exercise0901()
 	int size = sizeof(str1) / sizeof(str1[0]);
 	int i;
 
-	printf("str1 = ")
-	
+	printf("str1 = ");
+	for (i = 0; i < size; i++)
+	{
+		printf("%c", str1[i]);
+	} printf("\n");
+
+	printf("str2 = %s\n", str2);
+
+	printf("str3 = ");
+	printf(str3);
+	printf("\n");
+
+	printf("str4 = %s\n", str4);
+
 	return 0;
 }
