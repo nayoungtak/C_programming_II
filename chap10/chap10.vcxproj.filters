@@ -54,6 +54,9 @@
     <ClCompile Include="ch10_11.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="ch10_12.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="contact.h">
