@@ -38,18 +38,23 @@ int assign01()
 	{"id1", "pw1"},
 	{"id2", "pw2"}
 	};
-	static Login lt;
+	Login lt;
 
 	while (1)
 	{
-		printf("ID? ");
+		printf("ID(exit 입력시 종료)? ");
 		scanf_s("%s", lt.id, (unsigned)SIZE);
+		if (strcmp(lt.id, "exit") == 0) {
+			printf("시스템을 종료합니다.");
+			break;
+		}
 		printf("Password? ");
 		scanf_s("%s", lt.password, (unsigned)SIZE);
 		
 		int success = 0;
 
-		for (int i = 0; i < sizeof(logins); i++) {
+		int count = sizeof(logins) / sizeof(logins[0]);
+		for (int i = 0; i < count; i++) {
 			if (check_login(&logins[i], &lt)) {
 				success = 1;
 				break;
