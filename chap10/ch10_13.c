@@ -22,7 +22,7 @@ typedef struct line						// Á÷¼±
 double get_length(const LINE* ln);
 
 
-int main(void)
+int main()
 {
 	LINE ln1 = { {10,20}, {30,40} };
 

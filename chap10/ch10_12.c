@@ -24,7 +24,7 @@ int main()
 	dday.month = 11;
 	dday.day = 30;
 
-	printf("DATE의 크기 + %d\n", sizeof(DATE));
+	printf("DATE의 크기 = %d\n", sizeof(DATE));
 	printf("%d/%d/%d\n", dday.year + 2000, dday.month, dday.day);
 
 	return 0;
