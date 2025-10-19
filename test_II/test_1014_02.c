@@ -25,7 +25,7 @@
 #include <stdio.h>
 #define NAME_SIZE 21
 
-// 1. STUDENT 구조체 정의 및 typedef
+// STUDENT 구조체 정의 및 typedef
 struct student {
 	char name[NAME_SIZE];
 	int kor_score;
@@ -68,7 +68,7 @@ int test02()
 	return 0;
 }
 
-// 3. 학생 정보를 출력하고 평균을 계산하는 함수
+// 학생 정보를 출력하고 평균을 계산하는 함수
 void print_student(const Student* s)
 {
 	printf("\n--- 학생 성적 정보 출력 ---\n");
