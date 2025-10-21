@@ -1,42 +1,43 @@
-/*
-* 2)³­ÀÌµµ°¡ ºñ±³Àû ³ôÀº ¹®Á¦¸¦ ÇÏ³ª Àû°í, ¿©±â¿¡ ´ëÇÑ ÄÚµå¸¦ ¼³°è, ±¸ÇöÇÏ½Ã¿À.
-³­ÀÌµµ°¡ ºñ±³Àû <³ôÀº> ¹®Á¦¸¦ ÇÏ³ª ¸¸µé¾î Àû°í, ¿©±â¿¡ ´ëÇÑ ÄÚµå¸¦ ¼³°è, ±¸ÇöÇÏ½Ã¿À.
+ï»¿/*
+* 2)ë‚œì´ë„ê°€ ë¹„êµì  ë†’ì€ ë¬¸ì œë¥¼ í•˜ë‚˜ ì ê³ , ì—¬ê¸°ì— ëŒ€í•œ ì½”ë“œë¥¼ ì„¤ê³„, êµ¬í˜„í•˜ì‹œì˜¤.
+ë‚œì´ë„ê°€ ë¹„êµì  <ë†’ì€> ë¬¸ì œë¥¼ í•˜ë‚˜ ë§Œë“¤ì–´ ì ê³ , ì—¬ê¸°ì— ëŒ€í•œ ì½”ë“œë¥¼ ì„¤ê³„, êµ¬í˜„í•˜ì‹œì˜¤.
 
-Á¦Ãâ : ¹®Á¦ + ÄÚµå + ½ÇÇà°á°ú
+ì œì¶œ : ë¬¸ì œ + ì½”ë“œ + ì‹¤í–‰ê²°ê³¼
 
-<ÂüÁ¶ : ÄÚµå ¼³°è ±¸Çö ½ÃÇè °úÁ¤>
-1. ¹®Á¦ ÀÛ¼ºÇÏ±â
-	- ¹®Á¦´Â ±³ÀçÀÇ ¿¹Á¦, ¿¬½À¹®Á¦, ÇÁ·Î±×·¥ °úÁ¦ µî¿¡¼­ ÂüÁ¶ÇÏ¿© À¯»çÇÑ ¹®Á¦¸¦ ½º½º·Î ¸¸µé±â
-2. ¹®Á¦¸¦ ºĞ¼®
-	- ¹®Á¦¸¦ ºĞ¼®ÇÏ¿© ´ÜÀ§ ¹®Á¦·Î ÂÉ°³±â
-	- °¢ ´ÜÀ§¹®Á¦º° ÇÔ¼ö(ÄÚµå) ÀÛ¼º ÈÄ
-	- ÁÖ¾îÁø ¹®Á¦¸¦ ÇØ°áÇÏ´Â ÄÚµå ÀÛ¼º
-3. ±¸Çö ÄÚµå ÀÛ¼º
-	- °¡±ŞÀû ÇÔ¼ö¸¦ »ç¿ëÇÏ¿© °£°áÇÏ°í °¡µ¶¼º ÀÖ°Ô ÄÚµå¸¦ ÀÛ¼ºÇÏ±â
-4. Å×½ºÆ® ÄÚµå ÀÛ¼º
-	- Å×½ºÆ® ÇÔ¼ö¸¦ Â¥¼­ ÇÔ¼ö°¡ Àß µ¿ÀÛÇÏ´ÂÁö È®ÀÎÇÏ´Â ÄÚµå ÀÛ¼º
-5. ½ÇÇà
-	- ½ÇÇà °á°ú¸¦ º¹»çÇÏ¿© ºÙÀÌ±â
+<ì°¸ì¡° : ì½”ë“œ ì„¤ê³„ êµ¬í˜„ ì‹œí—˜ ê³¼ì •>
+1. ë¬¸ì œ ì‘ì„±í•˜ê¸°
+	- ë¬¸ì œëŠ” êµì¬ì˜ ì˜ˆì œ, ì—°ìŠµë¬¸ì œ, í”„ë¡œê·¸ë¨ ê³¼ì œ ë“±ì—ì„œ ì°¸ì¡°í•˜ì—¬ ìœ ì‚¬í•œ ë¬¸ì œë¥¼ ìŠ¤ìŠ¤ë¡œ ë§Œë“¤ê¸°
+2. ë¬¸ì œë¥¼ ë¶„ì„
+	- ë¬¸ì œë¥¼ ë¶„ì„í•˜ì—¬ ë‹¨ìœ„ ë¬¸ì œë¡œ ìª¼ê°œê¸°
+	- ê° ë‹¨ìœ„ë¬¸ì œë³„ í•¨ìˆ˜(ì½”ë“œ) ì‘ì„± í›„
+	- ì£¼ì–´ì§„ ë¬¸ì œë¥¼ í•´ê²°í•˜ëŠ” ì½”ë“œ ì‘ì„±
+3. êµ¬í˜„ ì½”ë“œ ì‘ì„±
+	- ê°€ê¸‰ì  í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì—¬ ê°„ê²°í•˜ê³  ê°€ë…ì„± ìˆê²Œ ì½”ë“œë¥¼ ì‘ì„±í•˜ê¸°
+4. í…ŒìŠ¤íŠ¸ ì½”ë“œ ì‘ì„±
+	- í…ŒìŠ¤íŠ¸ í•¨ìˆ˜ë¥¼ ì§œì„œ í•¨ìˆ˜ê°€ ì˜ ë™ì‘í•˜ëŠ”ì§€ í™•ì¸í•˜ëŠ” ì½”ë“œ ì‘ì„±
+5. ì‹¤í–‰
+	- ì‹¤í–‰ ê²°ê³¼ë¥¼ ë³µì‚¬í•˜ì—¬ ë¶™ì´ê¸°
 */
 
-// ¹®Á¦ : 3¸í ÇĞ»ı Á¤º¸ ÀÔ·Â, Æò±Õ ±âÁØ ³»¸²Â÷¼ø Á¤·Ä, ÇĞÁ¡ ºÎ¿© ±â´É Æ÷ÇÔ
+// ë¬¸ì œ : 3ëª… í•™ìƒ ì •ë³´ ì…ë ¥, í‰ê·  ê¸°ì¤€ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬, í•™ì  ë¶€ì—¬ ê¸°ëŠ¥ í¬í•¨
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
 
-#define NAME_SIZE 21
-#define NUM_STUDENTS 3 // °ü¸®ÇÒ ÇĞ»ı ¼ö
+#define NAME_SIZE 21 // í•™ìƒ ì´ë¦„ ìµœëŒ€ ê¸¸ì´
+#define NUM_STUDENTS 3 // ê´€ë¦¬í•  í•™ìƒ ìˆ˜
+#define SUBJECT_COUNT 3 // ê³¼ëª© ìˆ˜
 
 struct student {
 	char name[NAME_SIZE];
 	int kor_score;
 	int math_score;
 	int eng_score;
+	double average;
 }; typedef struct student Student;
 
-// ÇÔ¼ö ÇÁ·ÎÅäÅ¸ÀÔ
-int test04();
+int manage_scores();
 double get_average(const Student* s);
 const char* get_grade(double average);
 void sort_students(Student students[], int count);
@@ -45,52 +46,70 @@ void print_report(const Student students[], int count);
 
 int main()
 {
-	test04();
+	manage_scores();
 	return 0;
 }
 
-int test04()
+int manage_scores()
 {
-	Student class_list[NUM_STUDENTS];
+	Student class_list[NUM_STUDENTS] = { 0 };
 
-	printf("--- ÇĞ»ı ¼ºÀû Á¤º¸ ÀÔ·Â ---\n");
-	printf("ÃÑ %d¸íÀÇ ÇĞ»ı Á¤º¸¸¦ ÀÔ·ÂÇÕ´Ï´Ù.\n", NUM_STUDENTS);
+	printf("--- í•™ìƒ ì„±ì  ì •ë³´ ì…ë ¥ ---\n");
+	printf("ì´ %dëª…ì˜ í•™ìƒ ì •ë³´ë¥¼ ì…ë ¥í•©ë‹ˆë‹¤.\n", NUM_STUDENTS);
 
-	// ÇĞ»ı Á¤º¸ ÀÔ·Â ¹Ş±â
+	// í•™ìƒ ì •ë³´ ì…ë ¥ ë°›ê¸°
 	for (int i = 0; i < NUM_STUDENTS; i++) {
-		printf("\n[%d¹ø ÇĞ»ı] ÀÌ¸§? ", i + 1);
-		scanf_s("%s", class_list[i].name, (unsigned)NAME_SIZE);
+		printf("\n[%dë²ˆ í•™ìƒ] ì´ë¦„? ", i + 1);
+		fgets(class_list[i].name, NAME_SIZE, stdin);
+		class_list[i].name[strcspn(class_list[i].name, "\n")] = 0;
 
-		printf("[%d¹ø ÇĞ»ı] ±¹¾î Á¡¼ö(Á¤¼ö)? ", i + 1);
-		scanf_s("%d", &class_list[i].kor_score);
+		printf("[%dë²ˆ í•™ìƒ] êµ­ì–´ ì ìˆ˜(0~100)? ", i + 1);
+		while (scanf("%d", &class_list[i].kor_score) != 1 ||
+			class_list[i].kor_score < 0 || class_list[i].kor_score > 100) {
+			printf("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤. 0~100 ì‚¬ì´ì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
+			while (getchar() != '\n'); // ë²„í¼ ë¹„ìš°ê¸°
+		}
 
-		printf("[%d¹ø ÇĞ»ı] ¼öÇĞ Á¡¼ö(Á¤¼ö)? ", i + 1);
-		scanf_s("%d", &class_list[i].math_score);
+		printf("[%dë²ˆ í•™ìƒ] ìˆ˜í•™ ì ìˆ˜(0~100)? ", i + 1);
+		while (scanf("%d", &class_list[i].math_score) != 1 ||
+			class_list[i].math_score < 0 || class_list[i].math_score > 100) {
+			printf("âŒ ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤. 0~100 ì‚¬ì´ì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
+			while (getchar() != '\n');
+		}
 
-		printf("[%d¹ø ÇĞ»ı] ¿µ¾î Á¡¼ö(Á¤¼ö)? ", i + 1);
-		scanf_s("%d", &class_list[i].eng_score);
+		printf("[%dë²ˆ í•™ìƒ] ì˜ì–´ ì ìˆ˜(0~100)? ", i + 1);
+		while (scanf("%d", &class_list[i].eng_score) != 1 ||
+			class_list[i].eng_score < 0 || class_list[i].eng_score > 100) {
+			printf("âŒ ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤. 0~100 ì‚¬ì´ì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
+			while (getchar() != '\n');
+		}
+		while (getchar() != '\n'); // ë‚¨ì€ ê°œí–‰ ë²„í¼ ë¹„ìš°ê¸°
 	}
 
-	// Æò±Õ Á¡¼ö ±âÁØ Á¤·Ä
+	for (int i = 0; i < NUM_STUDENTS; i++)
+		class_list[i].average = get_average(&class_list[i]);
+
+	// í‰ê·  ì ìˆ˜ ê¸°ì¤€ ì •ë ¬
 	sort_students(class_list, NUM_STUDENTS);
 
-	// ÃÖÁ¾ ¼ºÀû º¸°í¼­ Ãâ·Â
+	// ìµœì¢… ì„±ì  ë³´ê³ ì„œ ì¶œë ¥
 	print_report(class_list, NUM_STUDENTS);
 
-	printf("--- ¼ºÀû Ã³¸®¸¦ ¿Ï·áÇß½À´Ï´Ù. ---\n");
+	printf("--- ì„±ì  ì²˜ë¦¬ë¥¼ ì™„ë£Œí–ˆìŠµë‹ˆë‹¤. ---\n");
 	return 0;
 }
 
-// Á¡¼öÀÇ Æò±ÕÀ» ±¸ÇÏ´Â ÇÔ¼ö
+// ì ìˆ˜ì˜ í‰ê· ì„ êµ¬í•˜ëŠ” í•¨ìˆ˜
 double get_average(const Student* s)
 {
-	return (double)(s->kor_score + s->math_score + s->eng_score) / 3.0;
+	return (double)(s->kor_score + s->math_score + s->eng_score) / SUBJECT_COUNT;
 }
 
-// Æò±Õ Á¡¼ö¸¦ ±âÁØÀ¸·Î ÇĞÁ¡À» ºÎ¿©ÇÏ´Â ÇÔ¼ö
+// í‰ê·  ì ìˆ˜ë¥¼ ê¸°ì¤€ìœ¼ë¡œ í•™ì ì„ ë¶€ì—¬í•˜ëŠ” í•¨ìˆ˜
 const char* get_grade(double average)
 {
-	if (average >= 90.0) return "A";
+	if (average >= 95.0) return "A+";
+	else if (average >= 90.0) return "A";
 	else if (average >= 85.0) return "B+";
 	else if (average >= 80.0) return "B";
 	else if (average >= 75.0) return "C+";
@@ -100,14 +119,14 @@ const char* get_grade(double average)
 	else return "F";
 }
 
-//Æò±Õ Á¡¼ö(get_average)¸¦ ±âÁØÀ¸·Î ±¸Á¶Ã¼ ¹è¿­À» ³»¸²Â÷¼ø Á¤·ÄÇÏ´Â ÇÔ¼ö.
-void sort_students(Student students[], int count)
+//í‰ê·  ì ìˆ˜(get_average)ë¥¼ ê¸°ì¤€ìœ¼ë¡œ êµ¬ì¡°ì²´ ë°°ì—´ì„ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬í•˜ëŠ” í•¨ìˆ˜.
+void sort_students(Student students[], const int count)
 {
 	Student temp;
-	// Æò±Õ Á¡¼ö ±âÁØ ³»¸²Â÷¼ø Á¤·Ä
+	// í‰ê·  ì ìˆ˜ ê¸°ì¤€ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬
 	for (int i = 0; i < count - 1; i++) {
 		for (int j = 0; j < count - 1 - i; j++) {
-			if (get_average(&students[j]) < get_average(&students[j + 1])) {
+			if (students[j].average < students[j + 1].average) {
 				temp = students[j];
 				students[j] = students[j + 1];
 				students[j + 1] = temp;
@@ -116,18 +135,17 @@ void sort_students(Student students[], int count)
 	}
 }
 
-// Á¤·ÄµÈ ÇĞ»ı ¸ñ·Ï°ú ¼ºÀû º¸°í¼­¸¦ Ãâ·ÂÇÏ´Â ÇÔ¼ö.
-void print_report(const Student students[], int count)
+// ì •ë ¬ëœ í•™ìƒ ëª©ë¡ê³¼ ì„±ì  ë³´ê³ ì„œë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜.
+void print_report(const Student students[], const int count)
 {
 	printf("\n======================================================\n");
-	printf("         [ ÇĞ»ı ¼ºÀû ÃÖÁ¾ º¸°í¼­ (Æò±Õ ¼ø) ]\n");
+	printf("         [ í•™ìƒ ì„±ì  ìµœì¢… ë³´ê³ ì„œ (í‰ê·  ìˆœ) ]\n");
 	printf("======================================================\n");
-	printf("%-5s %-15s %5s %5s %5s %7s %7s\n", "¼øÀ§", "ÀÌ¸§", "±¹¾î", "¼öÇĞ", "¿µ¾î", "Æò±Õ", "ÇĞÁ¡");
+	printf("%-5s %-15s %5s %5s %5s %7s %7s\n", "ìˆœìœ„", "ì´ë¦„", "êµ­ì–´", "ìˆ˜í•™", "ì˜ì–´", "í‰ê· ", "í•™ì ");
 	printf("------------------------------------------------------\n");
 
 	for (int i = 0; i < count; i++) {
-		double avg = get_average(&students[i]);
-		const char* grade = get_grade(avg);
+		const char* grade = get_grade(students[i].average);
 
 		printf("%-5d %-15s %5d %5d %5d %7.1f %7s\n",
 			i + 1,
@@ -135,41 +153,8 @@ void print_report(const Student students[], int count)
 			students[i].kor_score,
 			students[i].math_score,
 			students[i].eng_score,
-			avg,
+			students[i].average,
 			grade);
 	}
 	printf("======================================================\n");
 }
-
-/*
-*½ÇÇà°á°ú
---- ÇĞ»ı ¼ºÀû Á¤º¸ ÀÔ·Â ---
-ÃÑ 3¸íÀÇ ÇĞ»ı Á¤º¸¸¦ ÀÔ·ÂÇÕ´Ï´Ù.
-
-[1¹ø ÇĞ»ı] ÀÌ¸§? ³ª¿µÅ¹
-[1¹ø ÇĞ»ı] ±¹¾î Á¡¼ö(Á¤¼ö)? 80
-[1¹ø ÇĞ»ı] ¼öÇĞ Á¡¼ö(Á¤¼ö)? 90
-[1¹ø ÇĞ»ı] ¿µ¾î Á¡¼ö(Á¤¼ö)? 95
-
-[2¹ø ÇĞ»ı] ÀÌ¸§? ¿µÅ¹ÀÌ
-[2¹ø ÇĞ»ı] ±¹¾î Á¡¼ö(Á¤¼ö)? 89
-[2¹ø ÇĞ»ı] ¼öÇĞ Á¡¼ö(Á¤¼ö)? 97
-[2¹ø ÇĞ»ı] ¿µ¾î Á¡¼ö(Á¤¼ö)? 87
-
-[3¹ø ÇĞ»ı] ÀÌ¸§? ¿µÅ¹ÀÓ
-[3¹ø ÇĞ»ı] ±¹¾î Á¡¼ö(Á¤¼ö)? 60
-[3¹ø ÇĞ»ı] ¼öÇĞ Á¡¼ö(Á¤¼ö)? 80
-[3¹ø ÇĞ»ı] ¿µ¾î Á¡¼ö(Á¤¼ö)? 46
-
-======================================================
-		 [ ÇĞ»ı ¼ºÀû ÃÖÁ¾ º¸°í¼­ (Æò±Õ ¼ø) ]
-======================================================
-¼øÀ§  ÀÌ¸§             ±¹¾î  ¼öÇĞ  ¿µ¾î    Æò±Õ    ÇĞÁ¡
-------------------------------------------------------
-1     ¿µÅ¹ÀÌ             89    97    87    91.0       A
-2     ³ª¿µÅ¹             80    90    95    88.3      B+
-3     ¿µÅ¹ÀÓ             60    80    46    62.0       D
-======================================================
-
---- ¼ºÀû Ã³¸®¸¦ ¿Ï·áÇß½À´Ï´Ù. ---
-*/
