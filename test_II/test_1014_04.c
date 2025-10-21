@@ -73,14 +73,14 @@ int manage_scores()
 		printf("[%d번 학생] 수학 점수(0~100)? ", i + 1);
 		while (scanf("%d", &class_list[i].math_score) != 1 ||
 			class_list[i].math_score < 0 || class_list[i].math_score > 100) {
-			printf("❌ 잘못된 입력입니다. 0~100 사이의 정수를 입력하세요: ");
+			printf("잘못된 입력입니다. 0~100 사이의 정수를 입력하세요: ");
 			while (getchar() != '\n');
 		}
 
 		printf("[%d번 학생] 영어 점수(0~100)? ", i + 1);
 		while (scanf("%d", &class_list[i].eng_score) != 1 ||
 			class_list[i].eng_score < 0 || class_list[i].eng_score > 100) {
-			printf("❌ 잘못된 입력입니다. 0~100 사이의 정수를 입력하세요: ");
+			printf("잘못된 입력입니다. 0~100 사이의 정수를 입력하세요: ");
 			while (getchar() != '\n');
 		}
 		while (getchar() != '\n'); // 남은 개행 버퍼 비우기
