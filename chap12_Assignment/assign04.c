@@ -14,31 +14,53 @@
 #define MAX_USERS 10
 #define MAX_STR 100
 
-typedef struct login{
+typedef struct {
     char ID[MAX_STR];
     char PW[MAX_STR];
 } Login;
+
+int load_users(Login* users, int max_users, const char* filename);
+void process_logins(const Login* users, int user_count);
+int find_user_index(const Login* users, int user_count, const char* id);
 
 
 int main()
 {
     Login users[MAX_USERS];
     int user_count = 0;
-    FILE* fp = NULL;
 
-    fp = fopen("password.txt", "r");
-    if (fp == NULL) {
-        printf("'%s' 파일을 열 수 없습니다.\n", "password.txt");
+    user_count = load_users(users, MAX_USERS, "password.txt");
+
+    if (user_count == -1) {
         return 1;
     }
 
-    while (user_count < MAX_USERS &&
-        fscanf(fp, "%s %s", users[user_count].ID, users[user_count].PW) == 2) {
-        user_count++;
+    process_logins(users, user_count);
+
+    return 0;
+}
+
+int load_users(Login* users, int max_users, const char* filename)
+{
+    FILE* fp = fopen(filename, "r");
+    if (fp == NULL) {
+        printf("'%s' 파일을 열 수 없습니다.\n", filename);
+        return -1;
+    }
+
+    int count = 0;
+
+    while (count < max_users &&
+        fscanf(fp, "%s %s", users[count].ID, users[count].PW) == 2) {
+        count++;
     }
 
     fclose(fp);
+    return count;
+}
 
+void process_logins(const Login* users, int user_count)
+{
     char check_id[MAX_STR];
     char check_pw[MAX_STR];
 
@@ -47,34 +69,36 @@ int main()
         scanf("%s", check_id);
 
         if (strcmp(check_id, ".") == 0) {
+            printf("프로그램을 종료합니다.\n");
             break;
         }
 
-        int found_num = -1;
+        int found_index = find_user_index(users, user_count, check_id);
 
-        for (int i = 0; i < user_count; i++) {
-            if (strcmp(check_id, users[i].ID) == 0) {
-                found_num = i;
-                break;
-            }
-        }
-
-        if (found_num == -1) {
+        if (found_index == -1) {
             printf("아이디를 찾을 수 없습니다.\n");
         }
         else {
             printf("Password? ");
             scanf("%s", check_pw);
 
-            if (strcmp(check_pw, users[found_num].PW) == 0) {
+            if (strcmp(check_pw, users[found_index].PW) == 0) {
                 printf("로그인 성공\n");
             }
             else {
                 printf("로그인 실패\n");
             }
-
             printf("\n");
         }
     }
-    return 0;
+}
+
+int find_user_index(const Login* users, int user_count, const char* id)
+{
+    for (int i = 0; i < user_count; i++) {
+        if (strcmp(id, users[i].ID) == 0) {
+            return i;
+        }
+    }
+    return -1;
 }

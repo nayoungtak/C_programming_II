@@ -12,36 +12,70 @@
 #include <stdio.h>
 #include <ctype.h>
 
+void get_filename(char* name);
+FILE* open_file(const char* filename);
+void count_alphabet(FILE* fp, int* counts);
+void print_counts(const int* counts);
+
+
 int main() {
     char filename[100];
     FILE* fp;
-    int ch;
     int alpha_count[26] = { 0 };
 
-    printf("파일명? ");
-    scanf("%s", filename);
+    // 파일명 입력받기
+    get_filename(filename);
 
-    fp = fopen(filename, "r");
+    // 파일 열기 (및 오류 처리)
+    fp = open_file(filename);
+    if (fp == NULL) {
+        return 1; // 오류 종료
+    }
+
+    // 파일 처리 (알파벳 개수 세기)
+    count_alphabet(fp, alpha_count);
+
+    // 파일 닫기
+    fclose(fp);
+
+    // 결과 출력
+    // print_counts 함수에게 개수가 저장된 배열(alpha_count)을 전달합니다.
+    print_counts(alpha_count);
+
+    return 0; // 정상 종료
+}
+
+void get_filename(char* name) {
+    printf("파일명? ");
+    scanf("%s", name);
+}
+
+FILE* open_file(const char* filename) {
+    FILE* fp = fopen(filename, "r");
+
     if (fp == NULL) {
         printf("'%s' 파일을 열 수 없습니다.\n", filename);
-        return 1;
     }
+
+    return fp; // 성공 시 포인터, 실패 시 NULL 반환
+}
+
+void count_alphabet(FILE* fp, int* counts) {
+    int ch;
 
     while ((ch = fgetc(fp)) != EOF) {
         if (isalpha(ch)) {
             ch = tolower(ch);
-            alpha_count[ch - 'a']++;
+            counts[ch - 'a']++;
         }
     }
+}
 
-    fclose(fp);
-
+void print_counts(const int* counts) {
     for (int i = 0; i < 26; i++) {
-        if (alpha_count[i] > 0) {
-            printf("%c:%d ", 'a' + i, alpha_count[i]);
+        if (counts[i] > 0) {
+            printf("%c:%d ", 'a' + i, counts[i]);
         }
     }
     printf("\n");
-
-    return 0;
 }

@@ -19,21 +19,48 @@ typedef struct {
     char phone[20];
 } CONTACT;
 
+void get_filename(char* name);
+CONTACT* load_contacts_from_file(const char* filename, int* count_ptr);
+void search_loop(const CONTACT* list, int count);
+const CONTACT* find_contact(const CONTACT* list, int count, const char* name);
+
+
 int main() {
-    FILE* fp;
     char filename[50];
+    CONTACT* list = NULL;
     int count = 0;
-    char temp_name[20], temp_phone[20];
 
-    printf("연락처 파일명? ");
-    scanf("%s", filename);
+    get_filename(filename);
 
-    fp = fopen(filename, "r");
-    if (fp == NULL) {
-        printf("파일을 열 수 없습니다.\n");
+    list = load_contacts_from_file(filename, &count);
+
+    if (list == NULL) {
         return 1;
     }
+    printf("%d개의 연락처를 로딩했습니다.\n", count);
 
+    search_loop(list, count);
+
+    free(list);
+
+    return 0;
+}
+
+void get_filename(char* name)
+{
+    printf("연락처 파일명? ");
+    scanf("%s", name);
+}
+
+CONTACT* load_contacts_from_file(const char* filename, int* count_ptr) {
+    FILE* fp = fopen(filename, "r");
+    if (fp == NULL) {
+        printf("파일을 열 수 없습니다.\n");
+        return NULL;
+    }
+
+    char temp_name[20], temp_phone[20];
+    int count = 0;
     while (fscanf(fp, "%s %s", temp_name, temp_phone) == 2) {
         count++;
     }
@@ -42,41 +69,47 @@ int main() {
     if (list == NULL) {
         printf("메모리 할당 실패\n");
         fclose(fp);
-        return 1;
+        return NULL;
     }
 
     rewind(fp);
-
     for (int i = 0; i < count; i++) {
         fscanf(fp, "%s %s", list[i].name, list[i].phone);
     }
+
     fclose(fp);
 
-    printf("%d개의 연락처를 로딩했습니다.\n", count);
+    *count_ptr = count;
+    return list;
+}
+
+void search_loop(const CONTACT* list, int count) {
+    char search[20];
 
     while (1) {
-        char search[20];
         printf("이름(. 입력 시 종료)? ");
         scanf("%s", search);
 
         if (strcmp(search, ".") == 0)
             break;
 
-        int found = 0;
-        for (int i = 0; i < count; i++) {
-            if (strcmp(list[i].name, search) == 0) {
-                printf("%s의 전화번호 %s로 전화를 겁니다...\n",
-                    list[i].name, list[i].phone);
-                found = 1;
-                break;
-            }
-        }
+        const CONTACT* found_contact = find_contact(list, count, search);
 
-        if (!found) {
+        if (found_contact != NULL) {
+            printf("%s의 전화번호 %s로 전화를 겁니다...\n",
+                found_contact->name, found_contact->phone);
+        }
+        else {
             printf("%s의 연락처를 찾을 수 없습니다.\n", search);
         }
     }
+}
 
-    free(list);
-    return 0;
+const CONTACT* find_contact(const CONTACT* list, int count, const char* name) {
+    for (int i = 0; i < count; i++) {
+        if (strcmp(list[i].name, name) == 0) {
+            return &list[i];
+        }
+    }
+    return NULL;
 }
