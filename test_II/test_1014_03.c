@@ -85,6 +85,7 @@ int input_books(Book books[], int max_count)
 			break;
 		}
 
+
 		printf("[%d번 도서] 저자? ", i + 1);
 		scanf_s("%s", books[i].author, (unsigned)AUTHOR_SIZE);
 

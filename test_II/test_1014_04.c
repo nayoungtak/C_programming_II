@@ -40,8 +40,8 @@ struct student {
 int manage_scores();
 double get_average(const Student* s);
 const char* get_grade(double average);
-void sort_students(Student students[], int count);
-void print_report(const Student students[], int count);
+void sort_students(Student students[], const int count);
+void print_report(Student students[], const int count);
 
 
 int main()
