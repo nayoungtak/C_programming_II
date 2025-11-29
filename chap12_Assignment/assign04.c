@@ -14,7 +14,7 @@
 #define MAX_USERS 10
 #define MAX_STR 100
 
-typedef struct {
+typedef struct  {
     char ID[MAX_STR];
     char PW[MAX_STR];
 } Login;

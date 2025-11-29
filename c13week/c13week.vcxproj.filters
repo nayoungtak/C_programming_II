@@ -15,31 +15,17 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="assign01.c">
+    <ClCompile Include="task10.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="assign03.c">
+    <ClCompile Include="task12.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="assign04.c">
+    <ClCompile Include="task13.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="assign11.c">
+    <ClCompile Include="task15.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="assign12.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="assign13.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="assign14.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="readme.txt" />
-    <Text Include="password.txt" />
-    <Text Include="mycontact.txt" />
   </ItemGroup>
 </Project>

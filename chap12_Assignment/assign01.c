@@ -10,7 +10,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-void get_filename(char* name);
 FILE* open_file(const char* filename);
 void print_file_with_lines(FILE* fp);
 
@@ -20,8 +19,8 @@ int main()
     char filename[100];
     FILE* fp = NULL;
 
-    // 파일명 입력받기
-    get_filename(filename);
+    printf("파일명? ");
+	scanf("%s", filename);
 
     // 파일 열기 (및 오류 처리)
     fp = open_file(filename);
@@ -37,17 +36,6 @@ int main()
     fclose(fp);
 
     return 0; // 정상 종료
-}
-
-/*
- * 함수이름: get_filename
- * 기능: 사용자에게 "파일명? "을 출력하고, 파일 이름을 입력받아 main 함수로부터 전달받은 배열(name)에 저장합니다.
- * 매개변수: char *name (파일명을 저장할 배열의 주소)
- * 반환값: 없음
- */
-void get_filename(char* name) {
-    printf("파일명? ");
-    scanf("%s", name);
 }
 
 /*
